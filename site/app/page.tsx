@@ -70,7 +70,7 @@ export default function Home() {
                         transition={{ duration: 0.6 }}
                         className="text-center"
                     >
-                        <span className="text-8xl mb-6 block animate-float">🦞</span>
+                        <img src="/logo.png" alt="Molt Alert" className="w-32 h-32 mb-6 mx-auto animate-float rounded-2xl" />
                         <h1 className="text-5xl md:text-7xl font-bold mb-4 lobster-glow">
                             Molt Alert
                         </h1>
