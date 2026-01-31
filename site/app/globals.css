@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-card: #1a1a1a;
+    --accent: #dc2626;
+    --accent-dark: #991b1b;
+    --white: #fafafa;
+    --white-muted: #737373;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--white);
+    font-family: var(--font-inter), 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space), 'Space Grotesk', sans-serif;
+}
+
+.mono {
+    font-family: var(--font-mono), 'JetBrains Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASS MORPHISM
+   ═══════════════════════════════════════════════════════════════ */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRESS BAR
+   ═══════════════════════════════════════════════════════════════ */
+.progress-bar {
+    background: #262626;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.5s ease-out;
+}
+
+.progress-fill.hot {
+    background: linear-gradient(90deg, #f59e0b, #dc2626);
+}
+
+.progress-fill.normal {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.progress-fill.critical {
+    background: linear-gradient(90deg, #dc2626, #991b1b);
+    animation: pulse-glow 1s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #1a1a1a 0%, #262626 50%, #1a1a1a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LOBSTER GLOW
+   ═══════════════════════════════════════════════════════════════ */
+.lobster-glow {
+    text-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+}
+
+.card-glow:hover {
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOKEN CARD
+   ═══════════════════════════════════════════════════════════════ */
+.token-card {
+    background: #141414;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.token-card:hover {
+    border-color: #404040;
+    transform: translateY(-2px);
+}
+
+.token-card.hot {
+    border-color: #dc2626;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+}
+
+.token-card.migrating {
+    border-color: #dc2626;
+    animation: pulse-glow 1s ease-in-out infinite;
+}

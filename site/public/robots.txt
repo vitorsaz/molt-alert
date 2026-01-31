@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://molt-alert.vercel.app/sitemap.xml
